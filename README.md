@@ -17,23 +17,37 @@
 ## APIs supported on the backend ( Work in Progress. Subject to change )
 
 1. Generate secure code
+
 Request type   : POST
+
 Request URL    : /generateCode
+
 Request Params :
+
 - phoneNumber  : <phone number to which text needs to be sent>
+
 Response : Text with secure code
 
 2. Open door
+
 Request type   : POST
+
 Request URL    : /unlock
+
 Request Params :
+
 - secureCode :  < generated secure code >
+
 Response : Success message along with door buzzing open
 
 3. Data for times door was unlocked in the last 'n' days
+
 Request type   : GET
+
 Request URL    : /data/:days
+
 Response :
+~~~~
 {
   "data" : [
     "client":"Alfred Thomas",
@@ -41,3 +55,4 @@ Response :
     "datetime":"4/3/2017 14:00:03"
   ]
 }
+~~~~
