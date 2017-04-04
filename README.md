@@ -17,7 +17,7 @@
 ## APIs supported on the backend ( Work in Progress. Subject to change )
 
 
-#### Generate secure code
+### Generate secure code
 
 **Request type**    : POST
 
@@ -29,7 +29,7 @@
 
 **Response** : Text with secure code
 
-#### Open door
+### Open door
 
 **Request type**   : POST
 
@@ -41,7 +41,7 @@
 
 **Response** : Success message along with door buzzing open
 
-#### Data for times door was unlocked in the last 'n' days
+### Data for times door was unlocked in the last 'n' days
 
 **Request type**   : GET
 
