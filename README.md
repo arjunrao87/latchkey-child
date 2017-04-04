@@ -19,35 +19,35 @@
 
 #### Generate secure code
 
-*Request type*    : POST
+**Request type**    : POST
 
-*Request URL*    : /generateCode
+**Request URL**    : /generateCode
 
-*Request Params* :
+**Request Params** :
 
 - phoneNumber  : < phone number to which text needs to be sent >
 
-*Response* : Text with secure code
+**Response** : Text with secure code
 
 #### Open door
 
-*Request type*   : POST
+**Request type**   : POST
 
-*Request URL*    : /unlock
+**Request URL**    : /unlock
 
-*Request Params* :
+**Request Params** :
 
 - secureCode :  < generated secure code >
 
-*Response* : Success message along with door buzzing open
+**Response** : Success message along with door buzzing open
 
 #### Data for times door was unlocked in the last 'n' days
 
-*Request type*   : GET
+**Request type**   : GET
 
-*Request URL*    : /data/:days
+**Request URL**    : /data/:days
 
-*Response* :
+**Response** :
 ~~~~
 {
   "data" : [
