@@ -1,0 +1,28 @@
+{
+  "name": "LatchkeyServer",
+  "version": "1.0.0",
+  "description": "Server hosted on Raspberry Pi ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunrao87/latchkey-child.git"
+  },
+  "keywords": [
+    "iot",
+    "raspberry",
+    "node"
+  ],
+  "author": "arjunrao87",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arjunrao87/latchkey-child/issues"
+  },
+  "homepage": "https://github.com/arjunrao87/latchkey-child#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
