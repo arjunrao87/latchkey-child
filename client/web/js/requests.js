@@ -4,5 +4,8 @@ $( "#unlockButton" ).click(function() {
   $.post( "http://localhost:3000/unlock", { code: code })
   .done(function( data ) {
     console.log( "Received response from server = " + data );
+    if( JSON.stringify( data ).includes( "unlocked" ) ){
+      
+    }
   });
 });

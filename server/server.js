@@ -16,16 +16,13 @@ app.listen(3000, function () {
 
 // Incoming requests
 
-app.get('/', function (req, res) {
-  res.send( api.homepage() );
-});
-
 app.post('/code', function( req, res ) {
   res.send( api.code( req ) );
 })
 
 app.post('/unlock', function( req, res ){
   var code = req.body.code;
+  console.log( "Received request to unlock with code = " + code );
   res.send( api.unlock( code ) );
 });
 
@@ -39,6 +36,6 @@ app.get('/data/:days', function( req, res ){
 
 // Serve web client
 
-app.get('/client', function(req, res) {
+app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/web/index.html'));
 });
