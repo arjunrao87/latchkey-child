@@ -8,6 +8,8 @@ var api = require('./api.js');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../client/web')))
+
 app.listen(3000, function () {
   console.log('LatchkeyServer listening on port 3000!')
 });
@@ -38,5 +40,5 @@ app.get('/data/:days', function( req, res ){
 // Serve web client
 
 app.get('/client', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname, '../client/web/index.html'));
 });
