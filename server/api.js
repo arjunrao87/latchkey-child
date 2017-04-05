@@ -3,12 +3,23 @@ function homepage(){
     return "You have reached the LatchkeyServer...";
 }
 
-function unlockDoor(){
-  return "The door is being unlocked!";
+function data( days ){
+  return "Retrieving data for the last " + days + " days.";
+}
+
+function code( request ){
+  return "Generating code...";
+}
+
+function unlock( code ){
+  return "The door is being unlocked with the code " + code  + " ! ";
 }
 
 // Outgoing requests
 
 module.exports = {
-  homepage : homepage
+  homepage : homepage,
+  code : code,
+  data : data,
+  unlock : unlock
 };
