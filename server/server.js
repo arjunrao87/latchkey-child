@@ -3,6 +3,7 @@ var app = express()
 var bodyParser = require("body-parser");
 var path = require('path');
 var api = require('./api.js');
+var logger = require('./log.js')
 
 // Start up server
 
@@ -11,18 +12,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client/web')))
 
 app.listen(3000, function () {
-  console.log('LatchkeyServer listening on port 3000!')
+  logger.info('LatchkeyServer listening on port 3000!')
 });
 
 // Incoming requests
 
-app.post('/code', function( req, res ) {
-  res.send( api.code( req ) );
+app.get('/key', function( req, res ) {
+  res.send( api.key( req ) );
 })
 
 app.post('/unlock', function( req, res ){
   var code = req.body.code;
-  console.log( "Received request to unlock with code = " + code );
+  logger.info( "Received request to unlock with code = " + code );
   res.send( api.unlock( code ) );
 });
 
