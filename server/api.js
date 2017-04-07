@@ -25,8 +25,10 @@ function unlock( key ){
   logger.info( "Attempting unlock with " + key );
   if( isValidKey( key ) == true ){
     unlockWithKey();
+    logger.info( "The door was successfully unlocked!" );
     return "The door is being unlocked! ";
   } else{
+    logger.info( "Incorrect key entered. Door was not unlocked.")
     return "Incorrect key entered. Nice try intruder!";
   }
 }
