@@ -17,14 +17,14 @@ app.listen(3000, function () {
 
 // Incoming requests
 
-app.get('/key', function( req, res ) {
+app.post('/key', function( req, res ) {
   res.send( api.key( req ) );
 })
 
 app.post('/unlock', function( req, res ){
-  var code = req.body.code;
-  logger.info( "Received request to unlock with code = " + code );
-  res.send( api.unlock( code ) );
+  var key = req.body.key;
+  logger.info( "Received request to unlock with key = " + key );
+  res.send( api.unlock( key ) );
 });
 
 app.get('/data/', function( req, res ){

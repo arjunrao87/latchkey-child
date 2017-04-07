@@ -1,17 +1,31 @@
+$( "#getKey" ).click(function() {
+  // Disable get key button for 5 seconds after pressing it
+  $("#getKey").attr("disabled", "disabled");
+  setTimeout(function() {
+      $("#getKey").removeAttr("disabled");
+  }, 5000);
+  console.log( "Sending getKey post request" );
+  $.post( "http://localhost:3000/key" )
+   .done(function( data ) {
+     console.log( "Received response from server = " + data );
+     $('#key').val(data);
+   });
+});
+
 $( "#unlockButton" ).click(function() {
 
-  // Disable unlock button for 10 seconds after pressing it
+  // Disable unlock button for 5 seconds after pressing it
   $("#unlockButton").attr("disabled", "disabled");
   setTimeout(function() {
       $("#unlockButton").removeAttr("disabled");
-  }, 10000);
+  }, 5000);
 
-  // Retrieve code that was entered
-  var code = $('#code').val();
-  console.log( "Sending unlock post request with " + code );
+  // Retrieve key that was entered
+  var key = $('#key').val();
+  console.log( "Sending unlock post request with " + key );
 
   // Send post request to unlock door
-  $.post( "http://localhost:3000/unlock", { code: code })
+  $.post( "http://localhost:3000/unlock", { key: key } )
   .done(function( data ) {
     console.log( "Received response from server = " + data );
     // Display result of post request
@@ -23,7 +37,7 @@ $( "#unlockButton" ).click(function() {
     } else{
       $( "#result" ).text( "Door did not unlock. Nice try intruder!" );
       setTimeout(function() {
-        $("#result").fadeOut().empty();
+        $("#result").empty();
       }, 5000);
     }
   });

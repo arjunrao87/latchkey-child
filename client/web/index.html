@@ -16,8 +16,11 @@
         <div class="header-content-inner">
           <h1>Unlock the Door</h1>
           <p>Door will open only if you are authenticated to do so</p>
-          <input id="code" type="text" name="code" style="color:#000000;text-align:center" placeholder="Enter code..."><br><br />
-          <button id="unlockButton" class="btn btn-primary btn-lg">Open door</button>
+          <input id="key" type="text" name="key" style="color:#000000;text-align:center" placeholder="Enter key..."><br><br />
+          <div style=" width: 100%;margin: 0 auto;">
+            <button id="getKey" class="btn btn-warning btn-lg">Get Key</button><br><br>
+            <button id="unlockButton" class="btn btn-primary btn-lg">Open door</button>
+          </div>
           <br />
           <h3 id="result"></h3>
         </div>

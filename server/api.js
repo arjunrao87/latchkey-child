@@ -22,16 +22,16 @@ function key( request ){
 }
 
 function unlock( key ){
-  if( isValidKey( key ) ){
-    logger.info( "Valid key entered. Proceeding to unlock door." );
-    unlock();
+  logger.info( "Attempting unlock with " + key );
+  if( isValidKey( key ) == true ){
+    unlockWithKey();
     return "The door is being unlocked! ";
   } else{
     return "Incorrect key entered. Nice try intruder!";
   }
 }
 
-function unlock(){
+function unlockWithKey(){
   //TODO : This is where the GPIO signal gets generated
 }
 
@@ -45,6 +45,7 @@ function generateKey() {
 }
 
 function isValidKey( userKey ) {
+  logger.info( "Checking validity of user key " );
   var magicKey = process.env.DA_MAGIC_KEY;
   var actualKey = "" + magicKey + generatedKey;
   return actualKey === userKey;
@@ -52,7 +53,7 @@ function isValidKey( userKey ) {
 
 function sendKeyToUser( key ){
   logger.info( "Generated key = " + key );
-  return "Generated key = " + key;
+  return "" + key;
 }
 
 // Outgoing requests
